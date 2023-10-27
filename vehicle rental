@@ -1,0 +1,41 @@
+class Vehicle_rental:
+    
+    def rental_menu(self):
+        return ('Services Offered by this Vehicle rental are: 1.Rent Vehicle, 2.Return Vehicle, 3.Available Vehicle')
+    
+    def avail_vehile(self):
+        print('Vehicles available: 2 Wheeler(Honda, Activa, Jupyter, Pulsar, Bullet),  4 Wheeler(Swift, Scorpio, Ertiga, Tiago, Nexon)')
+    
+    def rent_vehicle(username, age):
+        print("Enter your name and your age")
+        # Define lists of 2-wheelers and 4-wheelers
+        two_wheeler_list = ['Honda', 'Jupyter', 'Activa', 'Pulsar']
+        four_wheeler_list = ['Swift', 'Scorpio', 'Ertiga', 'Tiago', 'Nexon']
+        choice = input('Enter the type of vehicle you want to rent (2 or 4): ')
+        
+        if choice == '2':
+            print("Available 2-wheelers:")
+            for i, vehicle in enumerate(two_wheeler_list, 1):
+                print(f"{i}: {vehicle}")
+                
+    
+          choice_wanted = int(input('Enter the number of the vehicle you want to rent: '))
+
+        if 1 <= choice_wanted <= len(two_wheeler_list):
+            print(f'Your {two_wheeler_list[choice_wanted - 1]} is booked for you')
+        else:
+            print('You have entered a wrong choice')
+            
+        elif choice == '4':
+            print("Available 4-wheelers:")
+            for i, vehicle in enumerate(four_wheeler_list, 1):
+                print(f"{i}: {vehicle}")
+                
+            choice_wanted = int(input('Enter the number of the vehicle you want to rent: '))
+            if 1 <= choice_wanted <= len(four_wheeler_list):
+                print(f'Your {four_wheeler_list[choice_wanted - 1]} is booked for you')
+                else:
+                    print('You have entered a wrong choice')
+
+        else:
+            print('Invalid vehicle type. Please choose 2 for 2-wheelers or 4 for 4-wheelers')
